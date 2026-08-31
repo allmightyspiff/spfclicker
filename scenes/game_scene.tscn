@@ -1,0 +1,485 @@
+[gd_scene format=3 uid="uid://dfhunhyg8lyb4"]
+
+[ext_resource type="Script" uid="uid://dc7fhmudkltvl" path="res://scripts/game_scene.gd" id="1_gamescene"]
+[ext_resource type="AudioStream" path="res://audio/bong.tres" id="2_bong"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_topbar"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 24.0
+content_margin_bottom = 12.0
+bg_color = Color(0.0941176, 0.105882, 0.14902, 1)
+border_width_bottom = 2
+border_color = Color(0.901961, 0.223529, 0.27451, 1)
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_savebtn_norm"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.0784314, 0.160784, 0.227451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.164706, 0.435294, 0.592157, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_savebtn_hover"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.117647, 0.247059, 0.352941, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.27451, 0.560784, 0.686275, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clickersbtn_norm"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.117647, 0.337255, 0.219608, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.25098, 0.65098, 0.4, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_clickersbtn_hover"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.176471, 0.478431, 0.301961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.85098, 0.54902, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menubtn_norm"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.168627, 0.176471, 0.258824, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.38, 0.5, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menubtn_hover"]
+content_margin_left = 12.0
+content_margin_top = 6.0
+content_margin_right = 12.0
+content_margin_bottom = 6.0
+bg_color = Color(0.25, 0.27, 0.38, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.901961, 0.223529, 0.27451, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_redbtn_norm"]
+bg_color = Color(0.862745, 0.14902, 0.211765, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 0.45098, 0.501961, 1)
+corner_radius_top_left = 110
+corner_radius_top_right = 110
+corner_radius_bottom_right = 110
+corner_radius_bottom_left = 110
+shadow_color = Color(0.65, 0.05, 0.1, 0.4)
+shadow_size = 24
+shadow_offset = Vector2(0, 8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_redbtn_pressed"]
+bg_color = Color(0.65098, 0.0784314, 0.129412, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.85, 0.25, 0.3, 1)
+corner_radius_top_left = 110
+corner_radius_top_right = 110
+corner_radius_bottom_right = 110
+corner_radius_bottom_left = 110
+shadow_color = Color(0.4, 0.02, 0.05, 0.4)
+shadow_size = 12
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_redbtn_hover"]
+bg_color = Color(0.941176, 0.219608, 0.282353, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 0.65, 0.68, 1)
+corner_radius_top_left = 110
+corner_radius_top_right = 110
+corner_radius_bottom_right = 110
+corner_radius_bottom_left = 110
+shadow_color = Color(0.9, 0.15, 0.2, 0.5)
+shadow_size = 30
+shadow_offset = Vector2(0, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_modal_bg"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0.105882, 0.117647, 0.160784, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.25098, 0.65098, 0.4, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card_bg"]
+content_margin_left = 14.0
+content_margin_top = 12.0
+content_margin_right = 14.0
+content_margin_bottom = 12.0
+bg_color = Color(0.14, 0.15, 0.21, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.24, 0.26, 0.35, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="GameScene" type="Node2D" unique_id=1184466388]
+script = ExtResource("1_gamescene")
+
+[node name="BongPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_bong")
+bus = &"Master"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1703447662]
+
+[node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=163238356]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0627451, 0.0705882, 0.0980392, 1)
+
+[node name="CenterGlow" type="ColorRect" parent="CanvasLayer" unique_id=182041400]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -220.0
+offset_right = 220.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.862745, 0.14902, 0.211765, 0.05)
+
+[node name="TopBar" type="PanelContainer" parent="CanvasLayer" unique_id=791687485]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_topbar")
+
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer/TopBar" unique_id=136750335]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayerNameLabel" type="Label" parent="CanvasLayer/TopBar/HBox" unique_id=1465590940]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9, 0.93, 0.98, 1)
+theme_override_font_sizes/font_size = 18
+text = "Player: Player"
+
+[node name="ScoreContainer" type="HBoxContainer" parent="CanvasLayer/TopBar/HBox" unique_id=1795866180]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/TopBar/HBox/ScoreContainer" unique_id=225837065]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.960784, 0.313726, 0.352941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6)
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 24
+text = "Clicks: 0"
+horizontal_alignment = 1
+
+[node name="CpsLabel" type="Label" parent="CanvasLayer/TopBar/HBox/ScoreContainer" unique_id=1262963453]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.85, 0.55, 1)
+theme_override_font_sizes/font_size = 16
+text = "(+0/s)"
+horizontal_alignment = 1
+
+[node name="RightSide" type="HBoxContainer" parent="CanvasLayer/TopBar/HBox" unique_id=1934570394]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="SaveButton" type="Button" parent="CanvasLayer/TopBar/HBox/RightSide" unique_id=1590515112]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(85, 36)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_savebtn_norm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_savebtn_hover")
+text = "Save 💾"
+
+[node name="ClickersButton" type="Button" parent="CanvasLayer/TopBar/HBox/RightSide" unique_id=1023397172]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(95, 36)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 1, 0.9, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_clickersbtn_norm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_clickersbtn_hover")
+text = "Clickers"
+
+[node name="MenuButton" type="Button" parent="CanvasLayer/TopBar/HBox/RightSide" unique_id=1410014154]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(95, 36)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_menubtn_norm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_menubtn_hover")
+text = "Main Menu"
+
+[node name="ButtonCenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1779110561]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RedButton" type="Button" parent="CanvasLayer/ButtonCenterContainer" unique_id=307718883]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 220)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_redbtn_norm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_redbtn_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_redbtn_hover")
+text = "CLICK!"
+
+[node name="FXContainer" type="Control" parent="CanvasLayer" unique_id=1463785284]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ClickersOverlay" type="Control" parent="CanvasLayer" unique_id=1104353905]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ClickersPanel" type="PanelContainer" parent="CanvasLayer/ClickersOverlay" unique_id=977186225]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(440, 420)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -210.0
+offset_right = 220.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal_bg")
+
+[node name="Margin" type="MarginContainer" parent="CanvasLayer/ClickersOverlay/ClickersPanel" unique_id=1839630236]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin" unique_id=2021743960]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="HeaderLabel" type="Label" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox" unique_id=581685209]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.85, 0.55, 1)
+theme_override_font_sizes/font_size = 22
+text = "CLICKERS"
+horizontal_alignment = 1
+
+[node name="PassiveRateLabel" type="Label" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox" unique_id=213112921]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.7, 0.8, 1)
+theme_override_font_sizes/font_size = 14
+text = "Passive Income: 0 clicks / sec"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox" unique_id=515969738]
+layout_mode = 2
+
+[node name="AutoClickerCard" type="PanelContainer" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox" unique_id=43047479]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card_bg")
+
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox/AutoClickerCard" unique_id=1208480911]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="InfoVBox" type="VBoxContainer" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox/AutoClickerCard/HBox" unique_id=1784820813]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Title" type="Label" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox/AutoClickerCard/HBox/InfoVBox" unique_id=561978142]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.95, 0.98, 1)
+theme_override_font_sizes/font_size = 16
+text = "Auto Clicker"
+
+[node name="Description" type="Label" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox/AutoClickerCard/HBox/InfoVBox" unique_id=573799684]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.6, 0.7, 1)
+theme_override_font_sizes/font_size = 12
+text = "+1 click per second"
+
+[node name="AutoClickerOwnedLabel" type="Label" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox/AutoClickerCard/HBox/InfoVBox" unique_id=477404874]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.8, 0.95, 1)
+theme_override_font_sizes/font_size = 13
+text = "Owned: 0"
+
+[node name="AutoClickerBuyButton" type="Button" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox/AutoClickerCard/HBox" unique_id=742682673]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 42)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.85, 1, 0.9, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_clickersbtn_norm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_clickersbtn_hover")
+text = "Buy (100)"
+
+[node name="DoubleClickerCard" type="PanelContainer" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox" unique_id=1246439671]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card_bg")
+
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox/DoubleClickerCard" unique_id=749519305]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="InfoVBox" type="VBoxContainer" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox/DoubleClickerCard/HBox" unique_id=1396581439]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="Title" type="Label" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox/DoubleClickerCard/HBox/InfoVBox" unique_id=2128636909]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.95, 0.98, 1)
+theme_override_font_sizes/font_size = 16
+text = "Double Clicker"
+
+[node name="Description" type="Label" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox/DoubleClickerCard/HBox/InfoVBox" unique_id=1023387822]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.6, 0.7, 1)
+theme_override_font_sizes/font_size = 12
+text = "+2 clicks per second"
+
+[node name="DoubleClickerOwnedLabel" type="Label" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox/DoubleClickerCard/HBox/InfoVBox" unique_id=2004367860]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.8, 0.95, 1)
+theme_override_font_sizes/font_size = 13
+text = "Owned: 0"
+
+[node name="DoubleClickerBuyButton" type="Button" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox/DoubleClickerCard/HBox" unique_id=1088945040]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 42)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.85, 1, 0.9, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_clickersbtn_norm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_clickersbtn_hover")
+text = "Buy (200)"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox" unique_id=319092807]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ClickersCloseButton" type="Button" parent="CanvasLayer/ClickersOverlay/ClickersPanel/Margin/VBox" unique_id=1522439033]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_menubtn_norm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_menubtn_hover")
+text = "Close"
